@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Miya Fal Hyel</string>
+    <string name="title_activity_main">Miya Fal Hyel</string>
+    <string name="package_name">com.mofrey.hymn</string>
+    <string name="custom_url_scheme">com.mofrey.hymn</string>
+</resources>

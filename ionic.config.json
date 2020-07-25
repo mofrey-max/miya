@@ -1,0 +1,8 @@
+{
+  "name": "Miya Fal Hyel",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<ion-header>
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+ 
+<ion-list> 
+<ion-list-header>
+
+</ion-list-header>
+    <ion-label>
+    
+        Font Size (px)
+</ion-label>
+  <ion-range min="10" max="25" color="secondary" [(ngModel)]='fontSize' name='fs' #fs='ngModel'
+          (ionChange)='onChange()'>
+          <ion-label slot="start">10</ion-label>
+          <ion-label slot="end">25</ion-label>
+</ion-range>
+</ion-list>
+
+</ion-content>

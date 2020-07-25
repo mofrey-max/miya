@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<ion-app >
+    <ion-menu contentId="content1" side="start">
+        <div class="ion-text-center">
+            <img src="./../../../assets/icon/Heba.png" width="100px" height="100px"/>
+        </div>
+      <ion-content>
+      <ion-list lines="none">
+          <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+
+         <ion-list lines="none">
+          <ion-list-header>
+            Theme
+          </ion-list-header>
+           <ion-item>
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            <ion-label>
+              Dark Mode
+            </ion-label>
+            <ion-toggle [(ngModel)]="dark"></ion-toggle>
+          </ion-item>
+        </ion-list>
+
+       <ion-list lines="none">
+           <ion-list-header>
+            Communicate
+          </ion-list-header>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item href="mailto:manugodfrey8@gmail.com" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="mail"></ion-icon>
+              <ion-label>
+                support@heba-beta.com
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+     </ion-content>
+    </ion-menu>
+   
+    <ion-router-outlet id="content1" main></ion-router-outlet>
+  </ion-app>

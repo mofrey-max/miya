@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="!isSearchbarOpened">
+      <h6>Likatkatә Miya Fal Hyel</h6>
+    </ion-title>
+    <ion-buttons slot="start" *ngIf="!isSearchbarOpened">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+  </ion-buttons>
+    <ion-searchbar [(ngModel)]="searchTerm"            
+                  (ionChange)="setFilteredItems()" 
+                  placeholder="Search no."
+                  *ngIf="isSearchbarOpened" showCancelButton= "isSearchbarOpened=true"
+                 (ionCancel) = "isSearchbarOpened=false">
+    </ion-searchbar>
+    <ion-buttons slot ="end" ion-button icon-only *ngIf="!isSearchbarOpened" (click) ="isSearchbarOpened=true">
+      <ion-icon name="search" class="search"></ion-icon>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-list>
+     <ion-item *ngFor="let item of items" [routerLink]="item.url" routerDirection="root"> 
+       <ion-text color="violet">{{item.id}}</ion-text>
+       <ion-icon class="note" name="musical-notes"></ion-icon>
+      <h5 class="title">{{item.title}}</h5>
+     </ion-item>
+   </ion-list>
+</ion-content>
